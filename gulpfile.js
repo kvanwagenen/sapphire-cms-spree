@@ -15,7 +15,7 @@ var del = require('del');
 var path = require('path');
 var changeCase = require('change-case');
 
-var localRailsEngineAssetsPath = "../sapphire_cms_spree/app/assets"
+var localRailsEngineAssetsPath = "../sapphire_cms_rails_spree/app/assets"
 
 var files = {  
   css: ['src/styles/**/*.scss', 'src/styles/**/*.css'],
