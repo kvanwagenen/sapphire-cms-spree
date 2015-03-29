@@ -97,7 +97,7 @@ gulp.task('install:templates:rails', function(){
 });
 
 gulp.task('copy:js:rails', function(){
-  return copyFilesToLocalRailsEngine(files.dist.js, path.join(localRailsEngineAssetsPath, 'javascripts', 'spree', 'frontend'));
+  return copyFilesToLocalRailsEngine(files.dist.js, path.join(localRailsEngineAssetsPath, 'javascripts', 'sapphire_cms'));
 });
 
 gulp.task('copy:rails', function(){
