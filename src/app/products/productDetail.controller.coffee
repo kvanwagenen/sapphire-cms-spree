@@ -1,7 +1,9 @@
-ProductDetailController = ['$spRoute', 'ProductService', ($spRoute, ProductService) ->
-	ProductService.findById($spRoute.current.params["id"])
+ProductDetailController = ['$scope', '$spRoute', 'ProductService', ($scope, $spRoute, ProductService) ->
+	
+	ProductService.find($spRoute.current.params["id"])
 		.then (product) ->
-			@product = product
+			if product?
+				$scope.product = product
 ]
 
 angular.module('sp.spree')
