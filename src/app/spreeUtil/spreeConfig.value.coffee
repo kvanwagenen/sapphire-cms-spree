@@ -2,4 +2,4 @@ SpreeConfig = [->
 	apiPathPrefix: '/spree/api'
 ]
 
-angular.module('sp.spree').value 'SpreeConfig', SpreeConfig
+angular.module('sp.spree').factory 'SpreeConfig', SpreeConfig

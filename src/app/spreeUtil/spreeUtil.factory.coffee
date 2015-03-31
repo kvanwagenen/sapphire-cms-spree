@@ -1,7 +1,7 @@
 SpreeUtil = ['SpreeConfig', (SpreeConfig) ->
 	factory =
 		apiPath: (path) ->
-			"#{SpreeConfig.apiPathPrefix}path"
+			"#{SpreeConfig.apiPathPrefix}#{path}"
 	factory
 ]
 
