@@ -1,10 +1,14 @@
-ProductDetailController = ['$scope', '$spRoute', 'ProductService', ($scope, $spRoute, ProductService) ->
-	
-	ProductService.find($spRoute.current.params["id"])
-		.then (product) ->
-			if product?
-				$scope.product = product
+ProductDetailControllerConfig = ['$spRouteProvider', ($spRouteProvider) ->
+	$spRouteProvider.addControllerDependencies 'ProductDetailController',
+		product: ['$spRoute', 'ProductService', ($spRoute, ProductService) ->
+			ProductService.find($spRoute.nextRoute.params["id"])
+		]
+]
+
+ProductDetailController = ['$scope', 'product', ($scope, product) ->
+	$scope.product = product
 ]
 
 angular.module('sp.spree')
+	.config ProductDetailControllerConfig
 	.controller 'ProductDetailController', ProductDetailController 
